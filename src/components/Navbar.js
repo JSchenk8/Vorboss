@@ -1,14 +1,12 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import logo from '../images/logo.png'
 
 
-export default function Navbar(props) {
+export default function Navbar() {
 
   const [mobNav, updateMobNav] = useState(false)
 
-  const team = props.team
 
   function changeTeam(event) {
     localStorage.setItem('team', event.target.value)
@@ -37,7 +35,8 @@ export default function Navbar(props) {
       </div>
       <div className="navbar-end ">
         <div className={`navbar-item ${mobNav ? 'is-flex is-flex-direction-row' : ''}`}>
-          <div className="navbar-item select"><select onChange={changeTeam} value={team}>
+          <div className="navbar-item select"><select onChange={changeTeam} defaultValue={'change'}>
+            <option value="change">Change Team</option>
             <option aria-label="Procurement" value="procurement">The Procurement Team</option>
             <option aria-label="Installations" value="installations">The Installations Team</option>
           </select></div>

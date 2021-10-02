@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 export default function TeamModal() {
-  const [team, updateTeam] = useState('')
+  const [team, updateTeam] = useState('procurement')
 
   function changeTeam(event){
     updateTeam(event.target.value)
@@ -18,7 +18,7 @@ export default function TeamModal() {
   } else {
     return <div className="modal is-active">
       <div className="modal-background"></div>
-      <dic className="modal-content">
+      <div className="modal-content">
         <div className="box">
           <p className="titel">Welcome to Vorboss Tools Microsight</p>
           <p>Please select which team you are from - if you wish to change teams later don't worry, this is possible from the navbar!</p>
@@ -32,7 +32,7 @@ export default function TeamModal() {
               <button className="button" onClick={saveTeam}>Continue</button></div>
           </div>
         </div>
-      </dic>
+      </div>
     </div>
   }
 }

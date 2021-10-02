@@ -17,7 +17,7 @@ const App = () => (
     <TeamModal />
     <Navbar team={team} />
     <Switch>
-      <Route exact path="/Rigaud" render={() => (<Home team={team} />)} />
+      <Route exact path="/" render={() => (<Home team={team} />)} />
     </Switch>
   </BrowserRouter>
 )
