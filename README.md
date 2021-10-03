@@ -12,7 +12,6 @@ npm install
 npm run serve
 
 This will open it on localhost:8000. 
-It is a single page app with only one URL, localhost:8000/
 
 ## Choices
 
