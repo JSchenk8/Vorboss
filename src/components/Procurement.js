@@ -1,38 +1,30 @@
-import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-export default function Procurement() {
-
-  const [tools, updateTools] = useState([])
-  const [loaded, updateLoaded] = useState(true)
-
-  useEffect(() => {
-    async function getData() {
-      try {
-        const { data } = await axios.get('https://api.airtable.com/v0/app5MyMq1VN6a1Zvu/Tools?', { headers: { 'Authorization': `Bearer ${process.env.AIRTABLE_API_KEY}` } })
-        console.log(data)
-        console.log('It worked!')
-        updateTools(data.records)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    getData()
-  }, [])
+export default function Procurement(props) {
+  const tools = props.tools
 
 
 
 
+  
 
-
-  return <div>{loaded && <section className="hero is-fullheight is-danger procurement">
+  return <section className="hero is-fullheight-with-navbar home-image procurement">
     <div className="hero-body">
-      {tools.map((tool, index) => {
-        return <div key={index}>
-          <p >{tool.id}</p>
+      <div className="container">
+        <div className="columns has-background-white box">
+          {tools.map((tool, index) => {
+            const orderRequired = (tool.fields['Count (Ledger)'] < tool.fields['Restock Count']) ? true : false
+            return <div key={index} className="column">
+              <p className="is-size-4-widescreen is-size-5-mobile has-text-primary">{tool.fields['Tool Name']}</p>
+              <p className="has-text-link">Description:</p><p> {tool.fields['Description']}</p>
+              <p className="has-text-link">In Stock:</p><p> {tool.fields['Count (Ledger)']}</p>
+              <p className="has-text-link">Restock Count:</p><p> {tool.fields['Restock Count']}</p>
+              <a href={tool.fields['Procurement Link']} target='blank' className={orderRequired ? 'has-text-danger' : 'has-text-link'}>Reorder Tool</a>
+            </div>
+          })}
         </div>
-      })}
-      
+      </div>
     </div>
-  </section>}</div>
+  </section>
+
 }
