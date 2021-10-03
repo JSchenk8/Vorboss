@@ -20,16 +20,16 @@ export default function TeamModal() {
       <div className="modal-background"></div>
       <div className="modal-content">
         <div className="box">
-          <p className="titel">Welcome to Vorboss Tools Microsight</p>
+          <p className="title">Welcome to Vorboss Tools Microsight</p>
           <p>Please select which team you are from - if you wish to change teams later don't worry, this is possible from the navbar!</p>
           <div className="columns">
             <div className="column is-half has-text-centered">
-              <div className="select"><select onChange={changeTeam} value={team}>
+              <div className="select mt-5"><select onChange={changeTeam} value={team}>
                 <option aria-label="Procurement" value="procurement">The Procurement Team</option>
                 <option aria-label="Installations" value="installations">The Installations Team</option>
               </select></div></div>
             <div className="column is-half has-text-centered">
-              <button className="button" onClick={saveTeam}>Continue</button></div>
+              <button className="button mt-5" onClick={saveTeam}>Continue</button></div>
           </div>
         </div>
       </div>

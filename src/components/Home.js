@@ -10,14 +10,12 @@ export default function Home(props) {
   const dataRequired = (team === 'procurement') ? 'Tools' : 'Ledger'
   const [tools, updateTools] = useState([])
   const [ledger, updateLedger] = useState([])
-
+  const referenceObject = {}
 
   useEffect(() => {
     async function getData() {
       try {
         const { data } = await axios.get(`https://api.airtable.com/v0/app5MyMq1VN6a1Zvu/${dataRequired}?`, { headers: { 'Authorization': `Bearer ${process.env.AIRTABLE_API_KEY}` } })
-        console.log(data)
-        console.log('It worked!')
         if (team === 'procurement') {
           updateTools(data.records)
 
@@ -34,11 +32,11 @@ export default function Home(props) {
 
   if (team === 'installations') {
     return <div>
-      <Installations ledger={ledger}/>
+      <Installations ledger={ledger} references={referenceObject}/>
     </div>
   } else {
     return <div>
-      <Procurement tools={tools}/>
+      <Procurement tools={tools} references={referenceObject}/>
     </div>
   }
 

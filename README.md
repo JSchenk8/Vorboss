@@ -32,3 +32,6 @@ Using the API docs, I had a quick go to create an Airtable object/base, as below
   However, I couldn't get it to do exactly what I wanted and didn't want to go too far down the rabbit-hole of teaching myself Airtable the incorrect way. 
 
   As such, I reverted to simply using a fetch request to get JSON out of the table. This meant I didn't spend too much time learning a new tech, but instead could dedicate the time to showing you my react skills. 
+
+
+  I've hard coded in the tools in the ledger... obviously this isn't ideal, and if I wanted to spend a bit more time on it I'd fetch the 'Tools' data and create a data pool of IDs against names. 
