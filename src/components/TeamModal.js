@@ -1,7 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 
+// This is the modal which opens on a user's first visit to the website. They are given the choice between installations or procurement team, but reminded that this choice is not final
+
 export default function TeamModal() {
+  // I defaulted the team as procurement but could easily have left it as either with a choice, as I did in the Navbar
   const [team, updateTeam] = useState('procurement')
 
   function changeTeam(event){
@@ -11,7 +14,7 @@ export default function TeamModal() {
     localStorage.setItem('team', team)
     location.reload()
   }
-
+  // If the user has already selected a team and it is still in their local storage no modal is loaded. Otherwise a modal with 'is-active' class renders the modal
   if (localStorage.getItem('team')) {
     return <div className="modal">
     </div>

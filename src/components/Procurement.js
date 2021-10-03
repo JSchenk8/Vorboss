@@ -4,10 +4,8 @@ export default function Procurement(props) {
   const tools = props.tools
 
 
-
-
-  
-
+  // This is the procurement team's page. It's very simple, showing them how many of each tool they have, and how many the recount number should be. If the number in stock is less
+  // than the recount value, the link to restock changes colour to red.
   return <section className="hero is-fullheight-with-navbar procurement-image procurement">
     <div className="hero-body">
       <div className="container">

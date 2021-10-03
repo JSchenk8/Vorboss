@@ -1,6 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 
+// This is the page for the installations team, and I found it a little tricker. 
+// I would like to dynamically code in the data based on the pull request, but having spent a while on the page already, I chose to hard code the data in. 
+// The data is handed to the page in props, and then assessed and put into appropriate objects based on the status of each tool.
+// The data is then displayed to the user, and if they require the barcodes for the tools within each status they can click on a modal - I chose to keep 
+// this data separate as I felt the barcode numbers clogged the page initially, and might not be required at a first glance by an engineer. 
+
 export default function Installations(props) {
   const ledger = props.ledger
   const ledgerArray = []

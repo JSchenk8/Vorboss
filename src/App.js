@@ -6,6 +6,8 @@ import Navbar from './components/Navbar'
 
 import './styles/style.scss'
 
+
+//  This team checks if the user has already visited the microsight and selected their team - saving them the need to choose a team on every visit. Providing they don't clear their cache. 
 let team = ''
 if (localStorage.getItem('team')) {
   team = localStorage.getItem('team')

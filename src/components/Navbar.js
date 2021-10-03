@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import logo from '../images/logo.png'
 
+// This is a fairly simple navbar, it stays fixed at the top of the page, is transparent grey with the vorboss logo top left
+// There is a drop down menu on the top right to let users change team - this changes to a burger menu on mobile
 
 export default function Navbar() {
 
