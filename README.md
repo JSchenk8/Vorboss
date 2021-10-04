@@ -13,6 +13,8 @@ npm run serve
 
 This will open it on localhost:8000. 
 
+I put my API key and the base name in a .env file, so if you are sharing this on Github you will have to enter your own keys.
+
 ## Choices
 
 I chose to separate the two teams, using a modal and local storage. This way, when somebody opens the microsight for the first time they have the choice to say which team they're working in. However, I gave them the choice to change team in the navbar so that they don't have to manually clear local storage.
@@ -55,8 +57,6 @@ Using the API docs, I had a quick go to create an Airtable object/base, as below
   However, I couldn't get it to do exactly what I wanted and didn't want to go too far down the rabbit-hole of teaching myself Airtable the incorrect way. 
 
   As such, I reverted to simply using a fetch request to get JSON out of the table. This meant I didn't spend too much time learning a new tech, but instead could dedicate the time to showing you my react skills. 
-
-  I put my API key and the base name in a .env file, so if you are sharing this on Github you will have to enter your own keys. But if from a zipped file then they should be present.
 
   Finally, I chose to show as little data as possible per page, hopefully focusing on what the user needs. Obviously this could change, and would need updating.
 
